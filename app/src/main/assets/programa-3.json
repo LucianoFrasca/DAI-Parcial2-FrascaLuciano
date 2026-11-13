@@ -1,0 +1,122 @@
+[
+  {
+    "id": "12",
+    "title": "Navegación entre pantallas",
+    "track": "Android",
+    "day": 1,
+    "time": "14:30",
+    "room": "Auditorio",
+    "speaker": "Sol Díaz",
+    "summary": "Taller con un caso de mantenimiento y trabajo en parejas."
+  },
+  {
+    "id": "13",
+    "title": "Accesibilidad en listas",
+    "track": "Android",
+    "day": 2,
+    "time": "09:00",
+    "room": "Auditorio",
+    "speaker": "Inés Vidal",
+    "summary": "Demostración con un proyecto Android y espacio de preguntas."
+  },
+  {
+    "id": "14",
+    "title": "Depuración con el profiler",
+    "track": "Android",
+    "day": 2,
+    "time": "14:30",
+    "room": "Auditorio",
+    "speaker": "Leo Mora",
+    "summary": "Taller con un caso de mantenimiento y trabajo en parejas."
+  },
+  {
+    "id": "21",
+    "title": "SQLite sin sorpresas",
+    "track": "Datos",
+    "day": 1,
+    "time": "09:00",
+    "room": "Taller Norte",
+    "speaker": "Sol Díaz",
+    "summary": "Demostración con un proyecto Android y espacio de preguntas."
+  },
+  {
+    "id": "22",
+    "title": "Migraciones incrementales",
+    "track": "Datos",
+    "day": 1,
+    "time": "14:30",
+    "room": "Taller Norte",
+    "speaker": "Inés Vidal",
+    "summary": "Taller con un caso de mantenimiento y trabajo en parejas."
+  },
+  {
+    "id": "23",
+    "title": "Cachés para viajeros",
+    "track": "Datos",
+    "day": 2,
+    "time": "09:00",
+    "room": "Taller Norte",
+    "speaker": "Leo Mora",
+    "summary": "Demostración con un proyecto Android y espacio de preguntas."
+  },
+  {
+    "id": "24",
+    "title": "Consultas observables",
+    "track": "Datos",
+    "day": 2,
+    "time": "14:30",
+    "room": "Taller Norte",
+    "speaker": "Paz Vega",
+    "summary": "Taller con un caso de mantenimiento y trabajo en parejas."
+  },
+  {
+    "id": "31",
+    "title": "Pruebas de interfaz",
+    "track": "Calidad",
+    "day": 1,
+    "time": "09:00",
+    "room": "Aula Río",
+    "speaker": "Inés Vidal",
+    "summary": "Demostración con un proyecto Android y espacio de preguntas."
+  },
+  {
+    "id": "32",
+    "title": "Diseñar para fallos",
+    "track": "Calidad",
+    "day": 1,
+    "time": "14:30",
+    "room": "Aula Río",
+    "speaker": "Leo Mora",
+    "summary": "Taller con un caso de mantenimiento y trabajo en parejas."
+  },
+  {
+    "id": "33",
+    "title": "Medir el arranque",
+    "track": "Calidad",
+    "day": 2,
+    "time": "09:00",
+    "room": "Aula Río",
+    "speaker": "Paz Vega",
+    "summary": "Demostración con un proyecto Android y espacio de preguntas."
+  },
+  {
+    "id": "34",
+    "title": "Revisiones de código",
+    "track": "Calidad",
+    "day": 2,
+    "time": "14:30",
+    "room": "Aula Río",
+    "speaker": "Sol Díaz",
+    "summary": "Taller con un caso de mantenimiento y trabajo en parejas."
+  },
+  {
+    "id": "90",
+    "title": "Clínica de trazas",
+    "track": "Calidad",
+    "day": 1,
+    "time": "14:30",
+    "room": "Auditorio",
+    "speaker": "Sol Díaz",
+    "summary": "Taller con un caso de mantenimiento y trabajo en parejas."
+  }
+]

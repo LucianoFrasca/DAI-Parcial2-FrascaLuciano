@@ -1,0 +1,19 @@
+# Gradle / Android Studio
+.gradle/
+build/
+**/build/
+.idea/
+*.iml
+.kotlin/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Configuración local (ruta del SDK de cada máquina)
+local.properties
+
+# Varios
+*.apk
+*.aab
+*.log
+.DS_Store
