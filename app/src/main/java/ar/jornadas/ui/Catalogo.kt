@@ -13,22 +13,27 @@ import ar.jornadas.data.Charla
 
 @Composable
 fun Catalogo(model: ProgramaModel, abrir: (String) -> Unit) {
-    LaunchedEffect(Unit) { model.recargar() }
+    // Pedido 44: se quitó LaunchedEffect(Unit) { model.recargar() }, que volvía a pedir el
+    // programa cada vez que el Catalogo entraba en pantalla (al volver de una ficha o de otra pestaña).
+    // Pedido 43: día y tema se leen del ViewModel (SavedStateHandle) en vez de un remember local.
     val dia by model.dia.collectAsStateWithLifecycle()
-    var tema by remember { mutableStateOf("Todos") }
-    val fichas by model.charlas.collectAsStateWithLifecycle()
-    val aviso by model.aviso.collectAsStateWithLifecycle()
-    val cargando by model.cargando.collectAsStateWithLifecycle()
-    Selector(listOf("Ambos días", "Día 1", "Día 2"), dia) { model.dia.value = it }
-    val temas = listOf("Todos", "Android", "Datos", "Calidad")
-    Selector(temas, temas.indexOf(tema)) { tema = temas[it] }
+    val tema by model.tema.collectAsStateWithLifecycle()
+    val estado by model.uiState.collectAsStateWithLifecycle()
+    val cargando by model.descargando.collectAsStateWithLifecycle()
+    Selector(listOf("Ambos días", "Día 1", "Día 2"), dia, model::elegirDia)
+    val temas = listOf(ProgramaModel.TODOS, "Android", "Datos", "Calidad")
+    Selector(temas, temas.indexOf(tema)) { model.elegirTema(temas[it]) }
     TextButton(onClick = model::recargar) { Text("Actualizar") }
     if (cargando) LinearProgressIndicator(Modifier.fillMaxWidth())
-    if (aviso.isNotEmpty()) {
-        Text(aviso)
-        OutlinedButton(onClick = model::recargar) { Text("Reintentar") }
-    } else {
-        Grilla(fichas.filter { (dia == 0 || it.dia == dia) && (tema == "Todos" || it.tema == tema) }, abrir)
+    // Pedido 41: la falla ya no reemplaza la lista; cada estado se dibuja por separado.
+    when (val e = estado) {
+        ProgramaUiState.Cargando -> {}
+        is ProgramaUiState.SinDatos -> {
+            Text(e.mensaje)
+            OutlinedButton(onClick = model::recargar) { Text("Reintentar") }
+        }
+        is ProgramaUiState.Listo ->
+            if (e.edicionVacia) Text("Sin charlas programadas.") else Grilla(e.charlas, abrir)
     }
 }
 

@@ -11,14 +11,13 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null && intent.hasExtra("servicio_disponible")) {
-            model.mesa.disponible = intent.getBooleanExtra("servicio_disponible", true)
+            // Se aplica sobre los servicios del proceso ANTES de crear el ViewModel,
+            // porque su init dispara la carga automática.
+            (application as JornadasApp).servicios.mesa.disponible =
+                intent.getBooleanExtra("servicio_disponible", true)
             intent.removeExtra("servicio_disponible")
         }
         setContent { Portada(model) }
     }
-
-    override fun onStart() {
-        super.onStart()
-        model.recargar()
-    }
+    // Pedido 44: se quitó recargar() de onStart(): corría en cada rotación y al volver del fondo.
 }
